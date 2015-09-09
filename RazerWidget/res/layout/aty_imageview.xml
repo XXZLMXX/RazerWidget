@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <Button 
+   	    android:id="@+id/btn_round_imageview"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="圆形、圆角图像"
+   	    />
+    
+    <Button 
+   	    android:id="@+id/btn_mytouch_imageview"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="可拖动放大缩小旋转图像"
+   	    />
+    
+    <Button 
+   	    android:id="@+id/btn_photosort_imageview"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="图片可放大缩小旋转拖动"
+   	    />
+    
+    <Button 
+   	    android:id="@+id/btn_systemscreenshot_imageview"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="系统截屏"
+   	    />
+    
+    
+    <Button 
+   	    android:id="@+id/btn_rectanglescreenshot_imageview"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="方形截屏"
+   	    />
+    
+    <Button 
+   	    android:id="@+id/btn_circlescreenshot_imageview"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="圆形截屏"
+   	    />
+    
+    
+    <Button 
+   	    android:id="@+id/btn_rotate_imageview"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="旋转风车"
+   	    />
+    
+    
+    <Button 
+   	    android:id="@+id/btn_tag_imageview"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="添加标签"
+   	    />
+    
+    <Button 
+   	    android:id="@+id/btn_radiogroup_imageview"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="点击有二态的radiogroup"
+   	    />
+    
+
+</LinearLayout>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    
+    <com.lucifer.razerlib.test.Xfermode.AnimListView
+        android:id="@+id/alv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+    
+    
+    <com.lucifer.razerlib.test.Xfermode.AttrView
+        android:id="@+id/attrv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+    
+    
+    
+    
+    <com.lucifer.razerlib.test.Xfermode.BitmapMeshView 
+        android:id="@+id/bmv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+    
+    <com.lucifer.razerlib.test.Xfermode.BitmapMeshView2
+        android:id="@+id/bmv2_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        
+        />
+    
+
+    <com.lucifer.razerlib.test.Xfermode.BlurMaskFilterView
+        android:id="@+id/bmfv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" 
+        />
+
+    <com.lucifer.razerlib.test.Xfermode.BrickView
+        android:id="@+id/bv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" 
+        />
+    
+    
+    
+    
+    <com.lucifer.razerlib.test.Xfermode.CanvasView
+        android:id="@+id/cvsv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" 
+        />
+    
+    <com.lucifer.razerlib.test.Xfermode.ColumnsView
+        android:id="@+id/clmv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" 
+        />
+    
+    <com.lucifer.razerlib.test.Xfermode.CustomLayout
+        android:id="@+id/ctmv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" 
+        />
+    
+    
+    
+
+    <com.lucifer.razerlib.test.Xfermode.DisInView
+        android:id="@+id/div_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+         />
+
+    <com.lucifer.razerlib.test.Xfermode.DisOutView
+        android:id="@+id/dov_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.lucifer.razerlib.test.Xfermode.DreamEffectView
+        android:id="@+id/dev_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+    
+    
+    
+
+    <com.lucifer.razerlib.test.Xfermode.ECGView
+        android:id="@+id/ecgv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.lucifer.razerlib.test.Xfermode.EmbossMaskFilterView
+        android:id="@+id/emfv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.lucifer.razerlib.test.Xfermode.EraserView
+        android:id="@+id/ev_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+         />
+    
+    
+    
+
+    <com.lucifer.razerlib.test.Xfermode.FontView
+        android:id="@+id/fv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+         />
+    
+    
+    <com.lucifer.razerlib.test.Xfermode.IconView
+        android:id="@+id/icv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+         />
+    
+    <com.lucifer.razerlib.test.Xfermode.ImgView
+        android:id="@+id/imgv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+         />
+    
+    
+    <com.lucifer.razerlib.test.Xfermode.LayerView
+        android:id="@+id/lv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+         />
+    
+
+    <com.lucifer.razerlib.test.Xfermode.MatrixImageView
+        android:id="@+id/miv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="matrix"
+        android:visibility="gone"
+         />
+
+    <com.lucifer.razerlib.test.Xfermode.MatrixView
+        android:id="@+id/mv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+         />
+
+    <com.lucifer.razerlib.test.Xfermode.MultiCricleView
+        android:id="@+id/mcv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+         />
+    
+    
+    
+    <com.lucifer.razerlib.test.Xfermode.PageView
+        android:id="@+id/pgv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+    
+
+    <com.lucifer.razerlib.test.Xfermode.PathEffectView
+        android:id="@+id/pev_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+    
+    <com.lucifer.razerlib.test.Xfermode.PathView
+        android:id="@+id/pv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+    
+    <com.lucifer.razerlib.test.Xfermode.PolylineView
+        android:id="@+id/plv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.lucifer.razerlib.test.Xfermode.PorterDuffView
+        android:id="@+id/pdv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+    
+    
+
+    <com.lucifer.razerlib.test.Xfermode.ReflectView
+        android:id="@+id/rv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+    
+    
+
+    <com.lucifer.razerlib.test.Xfermode.ScreenView
+        android:id="@+id/sv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.lucifer.razerlib.test.Xfermode.ShaderView
+        android:id="@+id/sdv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.lucifer.razerlib.test.Xfermode.ShadowView
+        android:id="@+id/sdwv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+         />
+    
+    <com.lucifer.razerlib.test.Xfermode.SquareLayout
+        android:id="@+id/sql_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+         />
+    
+
+    <com.lucifer.razerlib.test.Xfermode.StaticLayoutView
+        android:id="@+id/slv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+         />
+    
+    
+    
+    
+    <com.lucifer.razerlib.test.Xfermode.WaveView
+        android:id="@+id/wv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+    
+    
+    
+
+    <com.lucifer.razerlib.test.Xfermode.XfermodeView
+        android:id="@+id/xfv_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</LinearLayout>

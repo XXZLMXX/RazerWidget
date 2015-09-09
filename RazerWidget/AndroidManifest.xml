@@ -1,0 +1,419 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lucifer.razerwidget"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="21" />
+
+    <!-- 网络 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    
+    <!-- SDCard -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    
+    <!-- 手机 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    
+    <!-- 短信权限 -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    
+    <!-- 定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    
+    <!-- 相机 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    
+    <!-- Audio -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    
+    <!-- 震动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <!-- 唤醒屏幕 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    
+    
+    
+    <application
+        android:name="com.lucifer.razerwidget.common.RazerApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Material.Light"
+        android:hardwareAccelerated="false"
+         >
+        
+        <activity
+            android:name="com.lucifer.razerwidget.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+        
+        <!-- ScrollListGridView -->
+        <activity
+            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.ScrollListGridViewActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.pullscrolllistgridaty.PullScrollListActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.pullscrolllistgridaty.PullScrollGridActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.PullDownViewActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.PhotoWallActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.sortlistview.SortListViewActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.topflowactivity.TopFlowActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+     
+        
+        
+        
+        
+        
+        
+        <!-- ImageView -->
+        <activity
+            android:name="com.lucifer.razerwidget.imageviewactivity.ImageViewActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.imageviewactivity.RoundImageActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.imageviewactivity.MyTouchImageViewActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.imageviewactivity.CropImageActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.imageviewactivity.SystemScreenShotActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.imageviewactivity.CircleScreenShotActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.imageviewactivity.RotateViewActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.imageviewactivity.PhotoSortActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.imageviewactivity.TagImageViewActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.imageviewactivity.RadioGroupActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        <!-- ViewPager -->
+        <activity
+            android:name="com.lucifer.razerwidget.viewpageractivity.ViewPagerActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.viewpageractivity.ColorfulViewPagerActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.viewpageractivity.JazzyViewPagerActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        
+        <!-- Dialog/PopupWindow -->
+        <activity
+            android:name="com.lucifer.razerwidget.dialogpopupwindowactivity.DialogPopupActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        
+        <!-- 进度条、进度环 -->
+        <activity
+            android:name="com.lucifer.razerwidget.progressbaractivity.ProgressBarActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.progressbaractivity.numberprogressbaractivity.NumberProgressBarActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.progressbaractivity.circularprogressbaractivity.CircularProgressActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        <!-- 年月日历-->
+        <activity
+            android:name="com.lucifer.razerwidget.calendaractivity.CalendarActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        
+        
+        <!-- 日期时间 -->
+        <activity
+            android:name="com.lucifer.razerwidget.timeactivity.TimeActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        
+        
+        <!-- 级联菜单 -->
+        <activity
+            android:name="com.lucifer.razerwidget.relationmenuactivity.RelationMenuActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        
+        
+        <!-- 左右拉出菜单 -->
+        <activity
+            android:name="com.lucifer.razerwidget.swipeoutactivity.SwipeoutActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.swipeoutactivity.SwipeCardActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        
+        
+        <!-- 翻页 -->
+        <activity
+            android:name="com.lucifer.razerwidget.FlipPageActivity.FlipPageActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.FlipPageActivity.ImageSliderActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        
+        <!-- 卫星菜单 -->
+        <activity
+            android:name="com.lucifer.razerwidget.satelliteactivity.SatelliteActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        
+        
+        <!-- 图表报表 -->
+        <activity
+            android:name="com.lucifer.razerwidget.reportactivity.ReportActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        
+        <!-- TextView -->
+        <activity
+            android:name="com.lucifer.razerwidget.textview.TextViewActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        <!-- RecyclerView -->
+        <activity
+            android:name="com.lucifer.razerwidget.recyclerviewactivity.RecyclerViewActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.recyclerviewactivity.dragtoprecyclerview.DragRecyclerViewActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.recyclerviewactivity.pullrefreshrecyclerview.PullRefreshRecyclerActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.recyclerviewactivity.fragmentexamplerecyclerview.FragmentExampleActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        
+        
+        <!-- Dialog/PopupWindow -->
+        <activity
+            android:name="com.lucifer.razerwidget.dialogpopupwindow.DialogPopupwindowActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        
+        <!-- Test -->
+        <activity
+            android:name="com.lucifer.razerwidget.test.TestActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.test.MyTextViewActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.test.ColorFilterActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.test.XfermodeActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        <activity
+            android:name="com.lucifer.razerwidget.test.TryActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        
+        
+        <!-- BroadcastReceiver -->
+        <receiver 
+            android:name="com.lucifer.razerwidget.broadcastreceiver.NetChangeReceiver"
+            >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        
+        
+        
+    </application>
+
+</manifest>

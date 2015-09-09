@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button 
+   	    android:id="@+id/btn_list_scrolllistgrid"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="PulltoRefresh/ScrollView/ListViewForScrollView"
+   	    />
+   	
+   	<Button 
+   	    android:id="@+id/btn_grid_scrolllistgrid"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="PulltoRefresh/ScrollView/GridViewForScrollView"
+   	    />
+    
+   	
+   	
+   	<Button 
+   	    android:id="@+id/btn_pulldown_scrolllistgrid"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="下拉回弹"
+   	    />
+   	
+   	
+   	<Button 
+   	    android:id="@+id/btn_photowall_scrolllistgrid"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="瀑布墙"
+   	    />
+   	
+   	
+   	<Button 
+   	    android:id="@+id/btn_sortlistview_scrolllistgrid"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="搜索和字母索引滑动"
+   	    />
+   	
+   	<Button 
+   	    android:id="@+id/btn_topflow_scrolllistgrid"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="滑动到顶部停留"
+   	    />
+   	
+   	<Button 
+   	    android:id="@+id/btn_hybrid_scrolllistgrid"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:text="综合"
+   	    />
+
+</LinearLayout>

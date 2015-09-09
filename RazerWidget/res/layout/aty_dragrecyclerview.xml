@@ -1,0 +1,137 @@
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_deep"
+        android:orientation="vertical">
+
+        <com.lucifer.razerlib.recyclerview.dragtoprecyclerview.DragTopLayout
+            android:id="@+id/drag_layout"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blue_light"
+            >
+
+            <!--top view-->
+            <LinearLayout
+                android:id="@+id/top_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="40dp"
+                    android:text="Top View"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"/>
+
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_launcher"/>
+                
+            </LinearLayout>
+
+            
+            
+            <!--content view-->
+            <LinearLayout
+                android:id="@+id/drag_content_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    
+                    <RelativeLayout 
+                        android:id="@+id/rl_listview_drag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        >
+                        
+                        <ImageView 
+                            android:id="@+id/iv_listview_drag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/btn_listview_drag"
+                            />
+                        
+                    </RelativeLayout>
+                    
+                    
+                    <RelativeLayout 
+                        android:id="@+id/rl_gridview_drag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        >
+                        
+                        <ImageView 
+                            android:id="@+id/iv_gridview_drag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/btn_gridview_drag"
+                            />
+                        
+                    </RelativeLayout>
+                    
+                    
+                    <RelativeLayout 
+                        android:id="@+id/rl_staggedview_drag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        >
+                        
+                        <ImageView 
+                            android:id="@+id/iv_staggedview_drag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/btn_stagged_drag"
+                            />
+                        
+                    </RelativeLayout>
+                    
+                    
+                </LinearLayout>
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+                </android.support.v4.view.ViewPager>
+
+            </LinearLayout>
+
+
+        </com.lucifer.razerlib.recyclerview.dragtoprecyclerview.DragTopLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lucifer.razerlib.test.VerticalLinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#00dd00" 
+    xmlns:app="http://schemas.android.com/apk/res/com.lucifer.razerwidget">
+
+    <com.lucifer.razerlib.test.MyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#aa0000"
+        app:text="这是我的TextView"
+        app:textSize="30sp" />
+
+    <com.lucifer.razerlib.test.MyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#aa0000"
+        app:text="很简单的TextView"
+        app:textSize="30sp" />
+
+    <com.lucifer.razerlib.test.MyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#aa0000"
+        app:text="自定义的TextView"
+        app:textSize="30sp" />
+    
+    
+
+</com.lucifer.razerlib.test.VerticalLinearLayout>

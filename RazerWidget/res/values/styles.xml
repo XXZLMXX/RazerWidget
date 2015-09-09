@@ -1,0 +1,23 @@
+<resources>
+	<!-- Android Material Design
+		@android:style/Theme.Material 
+		@android:style/Theme.Material.Light
+		@android:style/Theme.Material.Light.DarkActionBar
+	 -->
+    <style name="AppBaseTheme" parent="android:Theme.Material">
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+    </style>
+    
+    
+    <!-- 自定义loading dialog -->
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>
