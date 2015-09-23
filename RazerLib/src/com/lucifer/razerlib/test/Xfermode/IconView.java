@@ -26,73 +26,83 @@ import android.view.View;
  */
 public class IconView extends View
 {
-	private Bitmap mBitmap;// λͼ
-	private TextPaint mPaint;// �����ı��Ļ���
-	private String mStr;// ���Ƶ��ı�
+	private Bitmap mBitmap;// 位图  
+    private TextPaint mPaint;// 绘制文本的画笔  
+    private String mStr;// 绘制的文本  
+  
+    private float mTextSize;// 画笔的文本尺寸  
 
-	private float mTextSize;// ���ʵ��ı��ߴ�
-
-	/**
-	 * ���ö����
-	 * 
-	 * @author AigeStudio {@link http://blog.csdn.net/aigestudio}
-	 * 
-	 */
+	
+	
+    /** 
+     * 宽高枚举类 
+     *  
+     * @author AigeStudio {@link http://blog.csdn.net/aigestudio} 
+     *  
+     */ 
 	private enum Ratio
 	{
 		WIDTH, HEIGHT
 	}
 
+	
+	
 	public IconView(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
 
-		// �������
-		calArgs(context);
-
-		// ��ʼ��
-		init();
+		 // 计算参数  
+        calArgs(context);  
+  
+        // 初始化  
+        init();  
 	}
 
-	/**
-	 * �������
-	 * 
-	 * @param context
-	 *            �����Ļ�������
-	 */
+	
+	
+	
+	/** 
+     * 参数计算 
+     *  
+     * @param context 
+     *            上下文环境引用 
+     */  
 	private void calArgs(Context context)
 	{
-		// ��ȡ��Ļ��
+		// 获取屏幕宽  
 		int sreenW = DimenUtil.getScreenSize((Activity) context)[0];
 
-		// �����ı��ߴ�
+		 // 计算文本尺寸  
 		mTextSize = sreenW * 1 / 10F;
 	}
 
+	
+	
+	
 	/**
-	 * ��ʼ��
+	 * 初始化 
 	 */
 	private void init()
 	{
-		/*
-		 * ��ȡBitmap
-		 */
+		/* 
+         * 获取Bitmap 
+         */  
 		if (null == mBitmap)
 		{
 			mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.a);
 		}
 
-		/*
-		 * ΪmStr��ֵ
-		 */
+		/* 
+         * 为mStr赋值 
+         */  
 		if (null == mStr || mStr.trim().length() == 0)
 		{
 			mStr = "AigeStudio";
 		}
 
-		/*
-		 * ��ʼ�����ʲ����ò���
-		 */
+		 /* 
+         * 初始化画笔并设置参数 
+         */  
 		mPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG
 				| Paint.LINEAR_TEXT_FLAG);
 		mPaint.setColor(Color.LTGRAY);
@@ -101,78 +111,83 @@ public class IconView extends View
 		mPaint.setTypeface(Typeface.DEFAULT_BOLD);
 	}
 
+	
+	
+	
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
 	{
-		// ���ò�����ĳߴ�
+		// 设置测量后的尺寸  
 		setMeasuredDimension(getMeasureSize(widthMeasureSpec, Ratio.WIDTH),
 				getMeasureSize(heightMeasureSpec, Ratio.HEIGHT));
 	}
 
-	/**
-	 * ��ȡ������ĳߴ�
-	 * 
-	 * @param measureSpec
-	 *            �������
-	 * @param ratio
-	 *            ��߱�ʶ
-	 * @return ���ߵĲ���ֵ
-	 */
+	
+	
+	
+	/** 
+     * 获取测量后的尺寸 
+     *  
+     * @param measureSpec 
+     *            测量规格 
+     * @param ratio 
+     *            宽高标识 
+     * @return 宽或高的测量值 
+     */  
 	private int getMeasureSize(int measureSpec, Ratio ratio)
 	{
-		// ������ʱ�����������ֵ
+		// 声明临时变量保存测量值  
 		int result = 0;
 
-		/*
-		 * ��ȡmode��size
-		 */
+		 /* 
+         * 获取mode和size 
+         */  
 		int mode = MeasureSpec.getMode(measureSpec);
 		int size = MeasureSpec.getSize(measureSpec);
 
-		/*
-		 * �ж�mode�ľ���ֵ
-		 */
-		switch (mode)
-		{
-		case MeasureSpec.EXACTLY:// EXACTLYʱֱ�Ӹ�ֵ
-			result = size;
-			break;
-		default:// Ĭ������½�UNSPECIFIED��AT_MOSTһ������
-			if (ratio == Ratio.WIDTH)
-			{
-				float textWidth = mPaint.measureText(mStr);
-				result = ((int) (textWidth >= mBitmap.getWidth() ? textWidth
-						: mBitmap.getWidth()))
-						+ getPaddingLeft()
-						+ getPaddingRight();
-			} else if (ratio == Ratio.HEIGHT)
-			{
-				result = ((int) ((mPaint.descent() - mPaint.ascent()) * 2 + mBitmap
-						.getHeight())) + getPaddingTop() + getPaddingBottom();
-			}
-
-			/*
-			 * AT_MOSTʱ�ж�size��result�Ĵ�СȡСֵ
-			 */
-			if (mode == MeasureSpec.AT_MOST)
-			{
-				result = Math.min(result, size);
-			}
-			break;
-		}
-		return result;
+		 /* 
+         * 判断mode的具体值 
+         */  
+        switch (mode) {  
+        case MeasureSpec.EXACTLY:// EXACTLY时直接赋值  
+            result = size;  
+            break;  
+        default:// 默认情况下将UNSPECIFIED和AT_MOST一并处理  
+            if (ratio == Ratio.WIDTH) {  
+                float textWidth = mPaint.measureText(mStr);  
+                result = ((int) (textWidth >= mBitmap.getWidth() ? textWidth : mBitmap.getWidth())) + getPaddingLeft() + getPaddingRight();  
+            } else if (ratio == Ratio.HEIGHT) {  
+                result = ((int) ((mPaint.descent() - mPaint.ascent()) * 2 + mBitmap.getHeight())) + getPaddingTop() + getPaddingBottom();  
+            }  
+  
+            /* 
+             * AT_MOST时判断size和result的大小取小值 
+             */  
+            if (mode == MeasureSpec.AT_MOST) {  
+                result = Math.min(result, size);  
+            }  
+            break;  
+        }  
+        return result;  
 	}
 
+	
+	
+	
 	@Override
 	protected void onDraw(Canvas canvas)
 	{
 		canvas.drawColor(Color.WHITE);
-		/*
-		 * ���� ����Ͳ���������������Ϊֻ��Drawһ�β���Ƶ������
-		 */
+		 /* 
+         * 绘制 
+         * 参数就不做单独处理了因为只会Draw一次不会频繁调用 
+         */  
 		canvas.drawBitmap(mBitmap, getWidth() / 2 - mBitmap.getWidth() / 2,
 				getHeight() / 2 - mBitmap.getHeight() / 2, null);
 		canvas.drawText(mStr, getWidth() / 2, mBitmap.getHeight() + getHeight()
 				/ 2 - mBitmap.getHeight() / 2 - mPaint.ascent(), mPaint);
 	}
+
+
+
 }

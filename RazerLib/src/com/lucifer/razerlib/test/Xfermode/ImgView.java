@@ -16,11 +16,15 @@ public class ImgView extends View
 {
 	private Bitmap mBitmap;// λͼ����
 
+	
+	
 	public ImgView(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
 	}
 
+	
+	
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
 	{
@@ -81,6 +85,9 @@ public class ImgView extends View
 		setMeasuredDimension(resultWidth, resultHeight);
 	}
 
+	
+	
+	
 	@Override
 	protected void onDraw(Canvas canvas)
 	{
@@ -88,6 +95,8 @@ public class ImgView extends View
 		canvas.drawBitmap(mBitmap, getPaddingLeft(), getPaddingTop(), null);
 	}
 
+	
+	
 	/**
 	 * ����λͼ
 	 * 
@@ -98,4 +107,7 @@ public class ImgView extends View
 	{
 		this.mBitmap = bitmap;
 	}
+
+
+
 }
