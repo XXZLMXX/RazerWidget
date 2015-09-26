@@ -64,8 +64,7 @@ public class RecyclerViewActivity extends Activity implements OnClickListener
 			break;
 			
 		case R.id.btn_animrefresh_recyclerview:
-			/*Intent intent4 = new Intent(RecyclerViewActivity.this, ItemTouchActivity.class);
-			startActivity(intent4);*/
+			Toast.makeText(getApplicationContext(), "还没做", 1000).show();
 			break;
 
 		default:
