@@ -5,7 +5,7 @@
     android:orientation="vertical" >
     
     <!-- 上面的按钮 -->
-    <LinearLayout 
+    <!-- <LinearLayout 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -95,7 +95,14 @@
         </RelativeLayout>
         
         
-    </LinearLayout>
+    </LinearLayout> -->
+    
+    
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rclv_fragmentexample"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+    
     
     
     

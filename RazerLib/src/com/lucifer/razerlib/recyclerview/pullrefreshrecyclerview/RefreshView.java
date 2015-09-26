@@ -12,12 +12,10 @@ import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.Interpolator;
 import android.view.animation.Transformation;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -155,7 +153,7 @@ public class RefreshView extends Drawable implements Drawable.Callback, Animatab
     }
 
     @Override
-    public void invalidateDrawable(@NonNull Drawable who)
+    public void invalidateDrawable(Drawable who)
     {
         final Callback callback = getCallback();
         if (callback != null)
@@ -208,7 +206,7 @@ public class RefreshView extends Drawable implements Drawable.Callback, Animatab
     }
 
     @Override
-    public void draw(@NonNull Canvas canvas)
+    public void draw(Canvas canvas)
     {
         final int saveCount = canvas.save();
 
@@ -625,7 +623,7 @@ public class RefreshView extends Drawable implements Drawable.Callback, Animatab
     }
 
     @Override
-    protected void onBoundsChange(@NonNull Rect bounds)
+    protected void onBoundsChange(Rect bounds)
     {
         super.onBoundsChange(bounds);
     }
@@ -667,7 +665,7 @@ public class RefreshView extends Drawable implements Drawable.Callback, Animatab
         mAnimation = new Animation()
         {
             @Override
-            public void applyTransformation(float interpolatedTime, @NonNull Transformation t)
+            public void applyTransformation(float interpolatedTime, Transformation t)
             {
                 setLoadingAnimationTime(interpolatedTime);
             }

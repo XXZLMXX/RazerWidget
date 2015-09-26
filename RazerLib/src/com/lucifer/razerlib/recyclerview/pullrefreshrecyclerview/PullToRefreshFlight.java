@@ -1,7 +1,6 @@
 package com.lucifer.razerlib.recyclerview.pullrefreshrecyclerview;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
@@ -104,7 +103,7 @@ public class PullToRefreshFlight extends ViewGroup
     }
 
     @Override
-    public boolean onInterceptTouchEvent(@NonNull MotionEvent ev)
+    public boolean onInterceptTouchEvent(MotionEvent ev)
     {
 
         if (!isEnabled() || canChildScrollUp() || mRefreshing)
@@ -157,7 +156,7 @@ public class PullToRefreshFlight extends ViewGroup
     }
 
     @Override
-    public boolean onTouchEvent(@NonNull MotionEvent ev)
+    public boolean onTouchEvent(MotionEvent ev)
     {
 
         if (!mIsBeingDragged)
@@ -279,7 +278,7 @@ public class PullToRefreshFlight extends ViewGroup
     private final Animation mAnimateToStartPosition = new Animation()
     {
         @Override
-        public void applyTransformation(float interpolatedTime, @NonNull Transformation t)
+        public void applyTransformation(float interpolatedTime, Transformation t)
         {
             moveToStart(interpolatedTime);
         }
@@ -288,7 +287,7 @@ public class PullToRefreshFlight extends ViewGroup
     private Animation mAnimateToEndPosition = new Animation()
     {
         @Override
-        public void applyTransformation(float interpolatedTime, @NonNull Transformation t)
+        public void applyTransformation(float interpolatedTime, Transformation t)
         {
             moveToEnd(interpolatedTime);
         }
@@ -297,7 +296,7 @@ public class PullToRefreshFlight extends ViewGroup
     private final Animation mAnimateToCorrectPosition = new Animation()
     {
         @Override
-        public void applyTransformation(float interpolatedTime, @NonNull Transformation t)
+        public void applyTransformation(float interpolatedTime, Transformation t)
         {
             int targetTop;
             int endTarget = mTotalDragDistance;

@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.view.Window;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -43,6 +44,7 @@ public class DragRecyclerViewActivity extends FragmentActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.aty_dragrecyclerview);
 
         dragLayout = (DragTopLayout) findViewById(R.id.drag_layout);
@@ -74,22 +76,23 @@ public class DragRecyclerViewActivity extends FragmentActivity
 			public void onSliding(float ratio)
 			{
 				// TODO Auto-generated method stub
-//				Toast.makeText(getApplicationContext(), "ˢ������", 1000).show();
 			}
+			
 			
 			@Override
 			public void onRefresh()
 			{
 				// TODO Auto-generated method stub
-				
+				Toast.makeText(getApplicationContext(), "如果是三个fragment都用了recyclerview，只是显示形式不同，而且公用同一套数据，则此时下拉回弹时可以刷新数据，然后刷新三个fragment", 1000).show();
 			}
+			
 			
 			@Override
 			public void onPanelStateChanged(PanelState panelState)
 			{
 				// TODO Auto-generated method stub
-//				scaleAnimation.cancel();
 			}
+		
 		};
 		dragLayout.listener(panelListener);
         

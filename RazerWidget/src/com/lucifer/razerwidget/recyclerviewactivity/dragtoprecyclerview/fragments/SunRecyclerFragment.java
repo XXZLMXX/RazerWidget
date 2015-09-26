@@ -1,4 +1,4 @@
-package com.lucifer.razerwidget.recyclerviewactivity.pullrefreshrecyclerview;
+package com.lucifer.razerwidget.recyclerviewactivity.dragtoprecyclerview.fragments;
 
 import java.util.ArrayList;
 
@@ -7,9 +7,7 @@ import com.lucifer.razerlib.recyclerview.pullrefreshrecyclerview.PullToRefreshVi
 import com.lucifer.razerwidget.R;
 import com.lucifer.razerwidget.common.Constants;
 import com.lucifer.razerwidget.recyclerviewactivity.dragtoprecyclerview.fragments.RecyclerViewAdapter;
-
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,9 +27,8 @@ public class SunRecyclerFragment extends Fragment
 	
 
 	@Override
-	@Nullable
 	public View onCreateView(LayoutInflater inflater,
-			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+			ViewGroup container, Bundle savedInstanceState)
 	{
 		// TODO Auto-generated method stub
 		viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_sunrecycler, null);

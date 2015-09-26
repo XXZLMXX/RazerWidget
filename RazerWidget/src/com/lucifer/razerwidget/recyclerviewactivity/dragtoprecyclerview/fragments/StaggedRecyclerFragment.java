@@ -2,8 +2,8 @@ package com.lucifer.razerwidget.recyclerviewactivity.dragtoprecyclerview.fragmen
 
 import java.util.ArrayList;
 
+import com.lucifer.razerlib.recyclerview.itemdecoration.DividerGridItemDecoration;
 import com.lucifer.razerwidget.R;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -70,13 +70,10 @@ public class StaggedRecyclerFragment extends Fragment
 	{
 		// TODO Auto-generated method stub
 		view = inflater.inflate(R.layout.fragment_listviewrecycler, null);
-		
 		srl_fragmentexample = (SwipeRefreshLayout) view.findViewById(R.id.srl_fragmentexample);
 		ctpb_listviewrecycler = (ContentLoadingProgressBar) view.findViewById(R.id.ctpb_listviewrecycler);
-		
 		rclv_listviewrecycler = (RecyclerView) view.findViewById(R.id.rclv_listviewrecycler);
-		rclv_listviewrecycler.setHasFixedSize(true);
-		rclv_listviewrecycler.setItemAnimator(new DefaultItemAnimator());
+		
 		
 		
 		srl_fragmentexample.setColorSchemeColors(R.color.black, R.color.green, R.color.yellow_deep, R.color.red_deep);
@@ -92,11 +89,17 @@ public class StaggedRecyclerFragment extends Fragment
 			}
 		});
 		
+		
+		
+		rclv_listviewrecycler.setHasFixedSize(true);
+		//添加分割线
+		rclv_listviewrecycler.addItemDecoration(new DividerGridItemDecoration(getActivity()));
+		// 设置item添加删除动画
+		rclv_listviewrecycler.setItemAnimator(new DefaultItemAnimator());
 		mLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
 		rclv_listviewrecycler.setLayoutManager(mLayoutManager);
 		adapter = new RecyclerViewAdapter(getActivity(), imageArrayList);
 		rclv_listviewrecycler.setAdapter(adapter);
-
 		rclv_listviewrecycler.setOnScrollListener(new RecyclerView.OnScrollListener()
 		{
 			@Override

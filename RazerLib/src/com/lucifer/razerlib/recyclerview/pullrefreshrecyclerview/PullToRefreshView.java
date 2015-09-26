@@ -2,7 +2,6 @@ package com.lucifer.razerlib.recyclerview.pullrefreshrecyclerview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.NonNull;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
@@ -191,7 +190,7 @@ public class PullToRefreshView extends ViewGroup
     }
 
     @Override
-    public boolean onTouchEvent(@NonNull MotionEvent ev)
+    public boolean onTouchEvent(MotionEvent ev)
     {
 
         if (!mIsBeingDragged)

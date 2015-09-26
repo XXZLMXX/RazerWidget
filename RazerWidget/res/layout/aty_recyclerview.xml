@@ -29,17 +29,6 @@
         />
     
     
-    <Button 
-        android:id="@+id/btn_swipeload_recyclerview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginTop="10dp"
-        android:text="太阳和飞机下拉刷新"
-        android:textColor="@color/black_deep"
-        android:textSize="16sp"
-        />
-    
     
     <Button 
         android:id="@+id/btn_fragmentexample_recyclerview"
@@ -47,7 +36,19 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_marginTop="10dp"
-        android:text="滑动fragment下的各种RecyclerView"
+        android:text="各种刷新和加载更多的RecyclerView"
+        android:textColor="@color/black_deep"
+        android:textSize="16sp"
+        />
+    
+    
+    <Button 
+        android:id="@+id/btn_animrefresh_recyclerview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:text="自定义下拉上拉的RecyclerView"
         android:textColor="@color/black_deep"
         android:textSize="16sp"
         />

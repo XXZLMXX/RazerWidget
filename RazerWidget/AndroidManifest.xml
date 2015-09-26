@@ -4,7 +4,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="21"
+        android:minSdkVersion="9"
         android:targetSdkVersion="21" />
 
     <!-- 网络 -->
@@ -52,7 +52,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Material.Light"
+        android:theme="@style/AppTheme"
         android:hardwareAccelerated="false"
          >
         
@@ -343,11 +343,6 @@
              >
         </activity>
         
-        <activity
-            android:name="com.lucifer.razerwidget.recyclerviewactivity.pullrefreshrecyclerview.PullRefreshRecyclerActivity"
-            android:label="@string/app_name"
-             >
-        </activity>
         
         <activity
             android:name="com.lucifer.razerwidget.recyclerviewactivity.fragmentexamplerecyclerview.FragmentExampleActivity"
@@ -356,6 +351,18 @@
         </activity>
         
         
+        <activity
+            android:name="com.lucifer.razerwidget.recyclerviewactivity.itemtouch.ItemTouchActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
+        
+        
+        <activity
+            android:name="com.lucifer.razerwidget.recyclerviewactivity.itemtouchsimple.ItemTouchSimpleActivity"
+            android:label="@string/app_name"
+             >
+        </activity>
         
         
         

@@ -1,21 +1,15 @@
 package com.lucifer.razerwidget.dialogpopupwindow;
 
 import com.lucifer.razerwidget.R;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Bitmap.Config;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class AllDialog
@@ -53,6 +47,10 @@ public class AllDialog
 
 		return loadingDialog;
 	}
+	
+	
+	
+	
 	
 	
 	

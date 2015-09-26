@@ -21,16 +21,19 @@ import android.view.ViewGroup;
  */
 public class SquareLayout extends ViewGroup
 {
-	private static final int ORIENTATION_HORIZONTAL = 0,
-			ORIENTATION_VERTICAL = 1;// ���з���ĳ�����ʶֵ
-	private static final int DEFAULT_MAX_ROW = Integer.MAX_VALUE,
-			DEFAULT_MAX_COLUMN = Integer.MAX_VALUE;// �������Ĭ��ֵ
+	// 排列方向的常量标识值 
+	private static final int ORIENTATION_HORIZONTAL = 0, ORIENTATION_VERTICAL = 1;
 
-	private int mMaxRow = DEFAULT_MAX_ROW;// �������
-	private int mMaxColumn = DEFAULT_MAX_COLUMN;// �������
+	// 最大行列默认值  
+	private static final int DEFAULT_MAX_ROW = Integer.MAX_VALUE,DEFAULT_MAX_COLUMN = Integer.MAX_VALUE;
 
-	private int mOrientation = ORIENTATION_VERTICAL;// ���з���Ĭ�Ϻ���
+	private int mMaxRow = DEFAULT_MAX_ROW;// 最大行数 
+	private int mMaxColumn = DEFAULT_MAX_COLUMN;// 最大列数  
 
+	private int mOrientation = ORIENTATION_VERTICAL;// 排列方向
+
+	
+	
 	public SquareLayout(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
@@ -40,228 +43,115 @@ public class SquareLayout extends ViewGroup
 		mMaxColumn = 2;
 	}
 
+	
+	
 	@Override
 	public boolean shouldDelayChildPressedState()
 	{
 		return false;
 	}
 
+	
+	
 	@SuppressLint("NewApi")
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
 	{
 		/*
-		 * ������ʱ�����洢������������ֵ
-		 * ��ֵӦ�õ��ڸ��������ڱ߾����������Ԫ�صĲ�����ߺ���߾�
+		 * 声明临时变量存储父容器的期望值 该值应该等于父容器的内边距加上所有子元素的测量宽高和外边距
 		 */
 		int parentDesireWidth = 0;
 		int parentDesireHeight = 0;
 
-		// ������ʱ�����洢��Ԫ�صĲ���״̬
+		// 声明临时变量存储子元素的测量状态
 		int childMeasureState = 0;
 
 		/*
-		 * �������������Ԫ��
+		 * 如果父容器内有子元素
 		 */
 		if (getChildCount() > 0)
 		{
-			// ��������һά����洢��Ԫ�ؿ�����
-			int[] childWidths = new int[getChildCount()];
-			int[] childHeights = new int[getChildCount()];
-
 			/*
-			 * ��ô�ͱ�����Ԫ��
+			 * 那么就遍历子元素
 			 */
 			for (int i = 0; i < getChildCount(); i++)
 			{
-				// ��ȡ��Ӧ�����±����Ԫ��
+				// 获取对应遍历下标的子元素
 				View child = getChildAt(i);
 
 				/*
-				 * ������Ԫ��û���ԡ���ռ�ÿռ䡱�ķ�ʽ�������ʾ����Ҫ����������
+				 * 如果该子元素没有以“不占用空间”的方式隐藏则表示其需要被测量计算
 				 */
 				if (child.getVisibility() != View.GONE)
 				{
 
-					// ������Ԫ�ز���������߾�
+					// 测量子元素并考量其外边距
 					measureChildWithMargins(child, widthMeasureSpec, 0,
 							heightMeasureSpec, 0);
 
-					// �Ƚ���Ԫ�ز�����߲��Ƚ�ȡ��ϴ�ֵ
+					// 比较子元素测量宽高并比较取其较大值
 					int childMeasureSize = Math.max(child.getMeasuredWidth(),
 							child.getMeasuredHeight());
 
-					// ���·�װ��Ԫ�ز������
+					// 重新封装子元素测量规格
 					int childMeasureSpec = MeasureSpec.makeMeasureSpec(
 							childMeasureSize, MeasureSpec.EXACTLY);
 
-					// ���²�����Ԫ��
+					// 重新测量子元素
 					child.measure(childMeasureSpec, childMeasureSpec);
 
-					// ��ȡ��Ԫ�ز��ֲ���
+					// 获取子元素布局参数
 					MarginLayoutParams mlp = (MarginLayoutParams) child
 							.getLayoutParams();
 
 					/*
-					 * ������߾������Ԫ��ʵ�ʿ�߲�����ݴ�������
+					 * 考量外边距计算子元素实际宽高
 					 */
-					childWidths[i] = child.getMeasuredWidth() + mlp.leftMargin
-							+ mlp.rightMargin;
-					childHeights[i] = child.getMeasuredHeight() + mlp.topMargin
-							+ mlp.bottomMargin;
+					int childActualWidth = child.getMeasuredWidth()
+							+ mlp.leftMargin + mlp.rightMargin;
+					int childActualHeight = child.getMeasuredHeight()
+							+ mlp.topMargin + mlp.bottomMargin;
 
-					// �ϲ���Ԫ�صĲ���״̬
+					/*
+					 * 如果为横向排列
+					 */
+					if (mOrientation == ORIENTATION_HORIZONTAL)
+					{
+						// 累加子元素的实际宽度
+						parentDesireWidth += childActualWidth;
+
+						// 获取子元素中高度最大值
+						parentDesireHeight = Math.max(parentDesireHeight,
+								childActualHeight);
+					}
+
+					/*
+					 * 如果为竖向排列
+					 */
+					else if (mOrientation == ORIENTATION_VERTICAL)
+					{
+						// 累加子元素的实际高度
+						parentDesireHeight += childActualHeight;
+
+						// 获取子元素中宽度最大值
+						parentDesireWidth = Math.max(parentDesireWidth,
+								childActualWidth);
+					}
+
+					// 合并子元素的测量状态
 					childMeasureState = combineMeasuredStates(
 							childMeasureState, child.getMeasuredState());
 				}
 			}
 
-			// ������ʱ�����洢��/�п��
-			int indexMultiWidth = 0, indexMultiHeight = 0;
-
 			/*
-			 * ���Ϊ��������
-			 */
-			if (mOrientation == ORIENTATION_HORIZONTAL)
-			{
-				/*
-				 * �����Ԫ�����������޶�ֵ��������м���
-				 */
-				if (getChildCount() > mMaxColumn)
-				{
-
-					// ������������
-					int row = getChildCount() / mMaxColumn;
-
-					// ��������
-					int remainder = getChildCount() % mMaxColumn;
-
-					// ������ʱ�����洢��Ԫ�ؿ�������±�ֵ
-					int index = 0;
-
-					/*
-					 * ����������㸸����������ֵ
-					 */
-					for (int x = 0; x < row; x++)
-					{
-						for (int y = 0; y < mMaxColumn; y++)
-						{
-							// ���п���ۼ�
-							indexMultiWidth += childWidths[index];
-
-							// ���и߶�ȡ���ֵ
-							indexMultiHeight = Math.max(indexMultiHeight,
-									childHeights[index++]);
-						}
-						// ÿһ�б�����󽫸��п������һ�п�ȱȽ�ȡ���ֵ
-						parentDesireWidth = Math.max(parentDesireWidth,
-								indexMultiWidth);
-
-						// ÿһ�б�������ۼӸ��и߶�
-						parentDesireHeight += indexMultiHeight;
-
-						// ���ò���
-						indexMultiWidth = indexMultiHeight = 0;
-					}
-
-					/*
-					 * ����������ʾ����Ԫ��δ��ռ��һ��
-					 */
-					if (remainder != 0)
-					{
-						/*
-						 * ����ʣ�µ���Щ��Ԫ�ؽ����߼��㵽����������ֵ
-						 */
-						for (int i = getChildCount() - remainder; i < getChildCount(); i++)
-						{
-							indexMultiWidth += childWidths[i];
-							indexMultiHeight = Math.max(indexMultiHeight,
-									childHeights[i]);
-						}
-						parentDesireWidth = Math.max(parentDesireWidth,
-								indexMultiWidth);
-						parentDesireHeight += indexMultiHeight;
-						indexMultiWidth = indexMultiHeight = 0;
-					}
-				}
-
-				/*
-				 * �����Ԫ��������û������ֵ����ôֱ�Ӽ��㼴�ɲ�������
-				 */
-				else
-				{
-					for (int i = 0; i < getChildCount(); i++)
-					{
-						// �ۼ���Ԫ�ص�ʵ�ʸ߶�
-						parentDesireHeight += childHeights[i];
-
-						// ��ȡ��Ԫ���п�����ֵ
-						parentDesireWidth = Math.max(parentDesireWidth,
-								childWidths[i]);
-					}
-				}
-			}
-
-			/*
-			 * ���Ϊ��������
-			 */
-			else if (mOrientation == ORIENTATION_VERTICAL)
-			{
-				if (getChildCount() > mMaxRow)
-				{
-					int column = getChildCount() / mMaxRow;
-					int remainder = getChildCount() % mMaxRow;
-					int index = 0;
-
-					for (int x = 0; x < column; x++)
-					{
-						for (int y = 0; y < mMaxRow; y++)
-						{
-							indexMultiHeight += childHeights[index];
-							indexMultiWidth = Math.max(indexMultiWidth,
-									childWidths[index++]);
-						}
-						parentDesireHeight = Math.max(parentDesireHeight,
-								indexMultiHeight);
-						parentDesireWidth += indexMultiWidth;
-						indexMultiWidth = indexMultiHeight = 0;
-					}
-
-					if (remainder != 0)
-					{
-						for (int i = getChildCount() - remainder; i < getChildCount(); i++)
-						{
-							indexMultiHeight += childHeights[i];
-							indexMultiWidth = Math.max(indexMultiHeight,
-									childWidths[i]);
-						}
-						parentDesireHeight = Math.max(parentDesireHeight,
-								indexMultiHeight);
-						parentDesireWidth += indexMultiWidth;
-						indexMultiWidth = indexMultiHeight = 0;
-					}
-				} else
-				{
-					for (int i = 0; i < getChildCount(); i++)
-					{
-						// �ۼ���Ԫ�ص�ʵ�ʿ��
-						parentDesireWidth += childWidths[i];
-
-						// ��ȡ��Ԫ���и߶����ֵ
-						parentDesireHeight = Math.max(parentDesireHeight,
-								childHeights[i]);
-					}
-				}
-			}
-
-			/*
-			 * �����������ڱ߾ཫ���ۼӵ�����ֵ
+			 * 考量父容器内边距将其累加到期望值
 			 */
 			parentDesireWidth += getPaddingLeft() + getPaddingRight();
 			parentDesireHeight += getPaddingTop() + getPaddingBottom();
 
 			/*
-			 * ���ԱȽϸ���������ֵ��Android�������Сֵ��С��ȡ�ϴ�ֵ
+			 * 尝试比较父容器期望值与Android建议的最小值大小并取较大值
 			 */
 			parentDesireWidth = Math.max(parentDesireWidth,
 					getSuggestedMinimumWidth());
@@ -269,7 +159,7 @@ public class SquareLayout extends ViewGroup
 					getSuggestedMinimumHeight());
 		}
 
-		// ȷ���������Ĳ������
+		// 确定父容器的测量宽高
 		setMeasuredDimension(
 				resolveSizeAndState(parentDesireWidth, widthMeasureSpec,
 						childMeasureState),
@@ -277,6 +167,8 @@ public class SquareLayout extends ViewGroup
 						childMeasureState << MEASURED_HEIGHT_STATE_SHIFT));
 	}
 
+	
+	
 	@Override
 	protected void onLayout(boolean changed, int l, int t, int r, int b)
 	{
@@ -429,6 +321,10 @@ public class SquareLayout extends ViewGroup
 		}
 	}
 
+	
+	
+	
+	
 	@Override
 	protected LayoutParams generateDefaultLayoutParams()
 	{
@@ -436,6 +332,7 @@ public class SquareLayout extends ViewGroup
 				ViewGroup.LayoutParams.MATCH_PARENT);
 	}
 
+	
 	@Override
 	protected android.view.ViewGroup.LayoutParams generateLayoutParams(
 			android.view.ViewGroup.LayoutParams p)
@@ -443,6 +340,7 @@ public class SquareLayout extends ViewGroup
 		return new LayoutParams(p);
 	}
 
+	
 	@Override
 	public android.view.ViewGroup.LayoutParams generateLayoutParams(
 			AttributeSet attrs)
@@ -450,26 +348,33 @@ public class SquareLayout extends ViewGroup
 		return new LayoutParams(getContext(), attrs);
 	}
 
+	
+	
 	@Override
 	protected boolean checkLayoutParams(android.view.ViewGroup.LayoutParams p)
 	{
 		return p instanceof LayoutParams;
 	}
 
+	
+	
 	public static class LayoutParams extends MarginLayoutParams
 	{
 		public int mGravity = Gravity.LEFT | Gravity.RIGHT;// ���뷽ʽ
 
+		
 		public LayoutParams(MarginLayoutParams source)
 		{
 			super(source);
 		}
 
+		
 		public LayoutParams(android.view.ViewGroup.LayoutParams source)
 		{
 			super(source);
 		}
 
+		
 		public LayoutParams(Context c, AttributeSet attrs)
 		{
 			super(c, attrs);
@@ -482,9 +387,14 @@ public class SquareLayout extends ViewGroup
 			mGravity = a.getInt(R.styleable.SquareLayout_my_gravity, 0);
 		}
 
+		
 		public LayoutParams(int width, int height)
 		{
 			super(width, height);
 		}
+	
 	}
+
+
+
 }

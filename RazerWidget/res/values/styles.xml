@@ -5,10 +5,12 @@
 		@android:style/Theme.Material.Light.DarkActionBar
 	 -->
     <style name="AppBaseTheme" parent="android:Theme.Material">
+        <item name="android:listDivider">@drawable/divider_bg</item>
     </style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:listDivider">@drawable/divider_bg</item>
     </style>
     
     
