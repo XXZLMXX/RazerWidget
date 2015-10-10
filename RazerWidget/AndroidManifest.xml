@@ -67,51 +67,39 @@
         </activity>
         
         
-        
         <!-- ScrollListGridView -->
-        <activity
+       	<activity
             android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.ScrollListGridViewActivity"
+            android:label="@string/app_name" >
+        </activity>
+       
+        <activity
+            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.pullscrollview.PullScrollViewActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        
+        <activity
+            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.multifragmentsview.MultiFragmentsViewActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        
+        <activity
+            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.refreshloadmoreview.RefreshLoadmoreActivity"
             android:label="@string/app_name"
              >
         </activity>
         
         <activity
-            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.pullscrolllistgridaty.PullScrollListActivity"
+            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.multifragmentsview.ImageDetailActivity"
             android:label="@string/app_name"
              >
         </activity>
         
-        <activity
-            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.pullscrolllistgridaty.PullScrollGridActivity"
-            android:label="@string/app_name"
-             >
-        </activity>
+
         
-        <activity
-            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.PullDownViewActivity"
-            android:label="@string/app_name"
-             >
-        </activity>
-        
-        <activity
-            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.PhotoWallActivity"
-            android:label="@string/app_name"
-             >
-        </activity>
-        
-        <activity
-            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.sortlistview.SortListViewActivity"
-            android:label="@string/app_name"
-             >
-        </activity>
-        
-        <activity
-            android:name="com.lucifer.razerwidget.scrolllistgridviewactivity.topflowactivity.TopFlowActivity"
-            android:label="@string/app_name"
-             >
-        </activity>
-        
-     
+	     
         
         
         

@@ -9,6 +9,9 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
+
+
+
 public class RadioGroupActivity extends Activity implements OnCheckedChangeListener
 {
 	SegmentedRadioGroup segmentText;

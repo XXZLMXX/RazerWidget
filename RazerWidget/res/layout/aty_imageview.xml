@@ -67,7 +67,7 @@
    	    android:id="@+id/btn_radiogroup_imageview"
    	    android:layout_width="wrap_content"
    	    android:layout_height="wrap_content"
-   	    android:text="点击有二态的radiogroup"
+   	    android:text="按钮点击特效"
    	    />
     
 

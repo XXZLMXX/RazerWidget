@@ -30,46 +30,6 @@
 	        />
 	    
 	    
-	    <com.lucifer.razerlib.imageview.togglebutton.ToggleButton 
-	        android:id="@+id/tb_default_roundimageview"
-	        android:layout_width="60dp"
-	        android:layout_height="40dp"
-	        android:layout_marginLeft="20dp"
-	        android:layout_below="@id/iv_roundimageview"
-	        />
-	    
-	    
-	    <com.lucifer.razerlib.imageview.togglebutton.ToggleButton 
-	        android:id="@+id/tb_roundimageview"
-	        android:layout_width="60dp"
-	        android:layout_height="40dp"
-	        android:layout_margin="20dp"
-	        android:layout_below="@id/tb_default_roundimageview"
-	        app:borderWidth="2dp"
-            app:offBorderColor="#000"
-            app:offColor="#ddd"
-            app:onColor="#f00"
-            app:spotColor="#00f"
-	        />
-	    
-	    
-	    <com.lucifer.razerlib.imageview.RippleView 
-	        android:id="@+id/rv_roundimageview"
-	        android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_below="@id/tb_roundimageview"
-            android:text="click me"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:background="@drawable/bg_rippleview"
-            android:gravity="center"
-            android:padding="35dp"
-            app:alphaFactor="0.7"
-            app:rippleColor="@color/red_deep"
-            app:hover="true"
-	        />
-	    
-	    
 	</RelativeLayout>
     
     

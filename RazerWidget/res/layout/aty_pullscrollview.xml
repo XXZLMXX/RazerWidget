@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    xmlns:app="http://schemas.android.com/apk/res/com.lucifer.razerwidget"
+    >
+    
+    
+    <!-- 背景图片 -->
+    <ImageView
+        android:id="@+id/iv_background_pullscrollview"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="-100dp"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/scrollview_header" />
+    
+    
+    <!-- 下滑回弹和上滑停留 -->
+    <com.lucifer.razerlib.scrolllistgridview.PullScrollView
+        android:id="@+id/psv_pullscrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:headerHeight="300dp"
+        app:headerVisibleHeight="100dp"
+        >
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:orientation="vertical" >
+            
+            <!-- 上部布局 -->
+            <LinearLayout 
+                android:id="@+id/ll_top_pullscrollview"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                >
+                
+                <ImageView 
+	                android:layout_width="60dp"
+	                android:layout_height="60dp"
+	                android:layout_gravity="center_vertical"
+	                android:layout_margin="10dp"
+	                android:src="@drawable/a2"
+	                />
+                
+               <TextView 
+                   android:layout_width="match_parent"
+                   android:layout_height="60dp"
+                   android:layout_gravity="center_vertical"
+                   android:gravity="center_vertical"
+                   android:text="lucifer"
+                   android:textColor="@color/white_deep"
+                   android:textSize="@dimen/text_size_22"
+                   /> 
+                
+                
+            </LinearLayout>
+            
+            
+            <!-- 中部三个按钮布局 -->
+            <LinearLayout 
+                android:id="@+id/ll_pullscrollview"
+				android:layout_width="match_parent"
+				android:layout_height="60dp"    
+				android:background="@color/black_light"
+				android:orientation="horizontal"            
+                >
+               
+                
+                <Button 
+                    android:id="@+id/btn_listview_pullscrollview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="ListView"
+                    android:textSize="@dimen/text_size_16"
+                    />
+                
+                
+                <Button 
+                    android:id="@+id/btn_gridview_pullscrollview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="GridView"
+                    android:textSize="@dimen/text_size_16"
+                    />
+                
+                
+                <Button 
+                    android:id="@+id/btn_photowall_pullscrollview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="瀑布流"
+                    android:textSize="@dimen/text_size_16"
+                    />
+                
+                
+                
+                
+            </LinearLayout>
+            
+            
+            <!-- 下部的瀑布流(目前还不行，用ListView代替)、ListView、GridView -->
+            <com.lucifer.razerlib.scrolllistgridview.pullscrolllistgrid.ListViewForScrollView 
+                android:id="@+id/lvfsv_pullscrollview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                />
+            
+            
+            <com.lucifer.razerlib.scrolllistgridview.pullscrolllistgrid.GridViewForScrollView 
+                android:id="@+id/gvfsv_pullscrollview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                />
+            
+            
+            <ListView 
+                android:id="@+id/lv_pullscrollview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                />
+            
+            <android.support.v4.widget.ContentLoadingProgressBar
+                android:id="@+id/ctpb_pullscrollview"
+                style="?android:attr/progressBarStyleInverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:visibility="gone" />
+            
+        </LinearLayout>
+        
+    </com.lucifer.razerlib.scrolllistgridview.PullScrollView>
+    
+    
+    
+    
+    <!-- 中部三个按钮布局 -->
+
+    <LinearLayout
+        android:id="@+id/ll_flow_pullscrollview"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/black_light"
+        android:visibility="gone"
+         >
+
+        <Button
+            android:id="@+id/btn_listview_flow_pullscrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ListView"
+            android:textSize="@dimen/text_size_16" />
+
+        <Button
+            android:id="@+id/btn_gridview_flow_pullscrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="GridView"
+            android:textSize="@dimen/text_size_16" />
+        
+        
+        <Button
+            android:id="@+id/btn_photowall_flow_pullscrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="瀑布流"
+            android:textSize="@dimen/text_size_16" />
+        
+    </LinearLayout>
+
+</RelativeLayout>
