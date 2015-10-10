@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
+    <color name="pull_refresh_textview">#000000</color>
+    
     <color name="gray_light">#eaeaea</color>
     <color name="gray_middle">#d8d8d8</color>
     <color name="gray_deep">#fffcf8</color>
