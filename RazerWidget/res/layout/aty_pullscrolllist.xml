@@ -44,6 +44,7 @@
                 </RelativeLayout>
 
                 <com.lucifer.razerlib.scrolllistgridview.pullscrolllistgrid.ListViewForScrollView
+                   xmlns:dafruits="http://schemas.android.com/apk/res/com.lucifer.razerwidget"
                     android:id="@+id/lv_pullscrolllist"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -52,7 +53,13 @@
                     android:divider="#e5e2d5"
                     android:dividerHeight="0dp"
                     android:focusable="true"
-                    android:focusableInTouchMode="true" />
+                    android:focusableInTouchMode="true"
+                    android:choiceMode="singleChoice"
+                   dafruits:scrollBarPanel="@layout/scrollbarpanel"
+                    dafruits:scrollBarPanelInAnimation="@anim/in"
+        			dafruits:scrollBarPanelOutAnimation="@anim/out"
+                     />
+                
             </LinearLayout>
             
         </ScrollView>

@@ -12,10 +12,10 @@
    	    />
     
     <Button 
-   	    android:id="@+id/btn_other_swipeout"
+   	    android:id="@+id/btn_slidingmenu_swipeout"
    	    android:layout_width="wrap_content"
    	    android:layout_height="wrap_content"
-   	    android:text="fuck"
+   	    android:text="SlidingMenu"
    	    />
     
     

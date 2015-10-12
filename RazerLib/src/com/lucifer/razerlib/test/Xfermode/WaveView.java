@@ -7,65 +7,66 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
 
-/**
- * WaveView
- * 
- * @author Aige
- * @since 2014/12/12
- */
-public class WaveView extends View {
-	private Path mPath;// ·������
-	private Paint mPaint;// ���ʶ���
 
-	private int vWidth, vHeight;// �ؼ����
-	private float ctrX, ctrY;// ���Ƶ��xy���
-	private float waveY;// ���Wave�������˵��Y��꣬���������Ƶ��Y���������һ��
 
-	private boolean isInc;// �жϿ��Ƶ��Ǹ����ƻ�������
+public class WaveView extends View
+{
+	private Path mPath;// 路径对象
+	private Paint mPaint;// 画笔对象
 
-	public WaveView(Context context, AttributeSet attrs) {
+	private int vWidth, vHeight;// 控件宽高
+	private float ctrX, ctrY;// 控制点的xy坐标
+	private float waveY;// 整个Wave顶部两端点的Y坐标，该坐标与控制点的Y坐标增减幅一致
+
+	private boolean isInc;// 判断控制点是该右移还是左移
+
+	
+	
+	public WaveView(Context context, AttributeSet attrs)
+	{
 		super(context, attrs);
 
-		// ʵ��ʲ����ò���
+		// 实例化画笔并设置参数
 		mPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
 		mPaint.setColor(0xFFA2D6AE);
 
-		// ʵ��·������
+		// 实例化路径对象
 		mPath = new Path();
 	}
 
+	
+	
 	@Override
-	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-		// ��ȡ�ؼ����
+	protected void onSizeChanged(int w, int h, int oldw, int oldh)
+	{
+		// 获取控件宽高
 		vWidth = w;
 		vHeight = h;
 
-		// ������Ƶ�Y���
+		// 计算控制点Y坐标
 		waveY = 1 / 8F * vHeight;
 
-		// ����˵�Y���
+		// 计算端点Y坐标
 		ctrY = -1 / 16F * vHeight;
 	}
 
+	
+	
 	@Override
-	protected void onDraw(Canvas canvas) {
+	protected void onDraw(Canvas canvas)
+	{
 		/*
-		 * ����Path���
-		 * ע���ҽ�Path������������˿ؼ����ⲿ������������
-		 * ������ǽ���������ڿؼ����x=0��λ�û�ʹ�ñ�������߱����Ӳ
-		 * ����Ϊʲô�ղ����Ѿ�˵��
-		 * ����������΢��������⡱�ߵ�
+		 * 设置Path起点 注意我将Path的起点设置在了控件的外部看不到的区域 如果我们将起点设置在控件左端x=0的位置会使得贝塞尔曲线变得生硬
+		 * 至于为什么刚才我已经说了 所以我们稍微让起点往“外”走点
 		 */
 		mPath.moveTo(-1 / 4F * vWidth, waveY);
 
 		/*
-		 * �Զ������ߵķ�ʽͨ����Ƶ�����λ�ڿؼ��ұߵ��յ�
-		 * �յ��λ��Ҳ���ڿؼ��ⲿ
-		 * ����ֻ�費����ctrX�Ĵ�С�仯����ʵ�֡��ˡ���Ч��
+		 * 以二阶曲线的方式通过控制点连接位于控件右边的终点 终点的位置也是在控件外部 我们只需不断让ctrX的大小变化即可实现“浪”的效果
 		 */
 		mPath.quadTo(ctrX, ctrY, vWidth + 1 / 4F * vWidth, waveY);
 
-		// Χ�ƿؼ��պ�����
+		// 围绕控件闭合曲线
 		mPath.lineTo(vWidth + 1 / 4F * vWidth, vHeight);
 		mPath.lineTo(-1 / 4F * vWidth, vHeight);
 		mPath.close();
@@ -73,32 +74,37 @@ public class WaveView extends View {
 		canvas.drawPath(mPath, mPaint);
 
 		/*
-		 * �����Ƶ��x�����ڻ�����յ�x���ʱ��ı�ʶֵ
+		 * 当控制点的x坐标大于或等于终点x坐标时更改标识值
 		 */
-		if (ctrX >= vWidth + 1 / 4F * vWidth) {
+		if (ctrX >= vWidth + 1 / 4F * vWidth)
+		{
 			isInc = false;
 		}
 		/*
-		 * �����Ƶ��x���С�ڻ�������x���ʱ��ı�ʶֵ
+		 * 当控制点的x坐标小于或等于起点x坐标时更改标识值
 		 */
-		else if (ctrX <= -1 / 4F * vWidth) {
+		else if (ctrX <= -1 / 4F * vWidth)
+		{
 			isInc = true;
 		}
 
-		// ��ݱ�ʶֵ�жϵ�ǰ�Ŀ��Ƶ�x����Ǹüӻ��Ǽ�
+		// 根据标识值判断当前的控制点x坐标是该加还是减
 		ctrX = isInc ? ctrX + 20 : ctrX - 20;
 
 		/*
-		 * �á�ˮ�����ϼ���
+		 * 让“水”不断减少
 		 */
-		if (ctrY <= vHeight) {
+		if (ctrY <= vHeight)
+		{
 			ctrY += 2;
 			waveY += 2;
 		}
 
 		mPath.reset();
 
-		// �ػ�
+		// 重绘
 		invalidate();
 	}
+	
+	
 }

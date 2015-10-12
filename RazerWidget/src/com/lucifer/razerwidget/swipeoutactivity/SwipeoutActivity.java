@@ -1,6 +1,7 @@
 package com.lucifer.razerwidget.swipeoutactivity;
 
 import com.lucifer.razerwidget.R;
+import com.lucifer.razerwidget.swipeoutactivity.slidingmenu.SlidingActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,7 +14,7 @@ import android.widget.Button;
 
 public class SwipeoutActivity extends Activity implements OnClickListener
 {
-	Button btn_swipecard_swipeout, btn_other_swipeout;
+	Button btn_swipecard_swipeout, btn_slidingmenu_swipeout;
 	
 	
 
@@ -26,9 +27,10 @@ public class SwipeoutActivity extends Activity implements OnClickListener
 		setContentView(R.layout.aty_swipeout);
 		
 		btn_swipecard_swipeout = (Button) findViewById(R.id.btn_swipecard_swipeout);
-		btn_other_swipeout = (Button) findViewById(R.id.btn_other_swipeout);
+		btn_slidingmenu_swipeout = (Button) findViewById(R.id.btn_slidingmenu_swipeout);
 		
 		btn_swipecard_swipeout.setOnClickListener(this);
+		btn_slidingmenu_swipeout.setOnClickListener(this);
 	}
 
 
@@ -44,6 +46,11 @@ public class SwipeoutActivity extends Activity implements OnClickListener
 			startActivity(intent1);
 			break;
 			
+			
+		case R.id.btn_slidingmenu_swipeout:
+			Intent intent2 = new Intent(SwipeoutActivity.this, SlidingActivity.class);
+			startActivity(intent2);
+			break;
 
 		default:
 			break;

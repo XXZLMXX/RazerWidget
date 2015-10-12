@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <attr name="fromDegrees" format="float|reference" />
-    <attr name="toDegrees" format="float|reference" />
-    <attr name="childSize" format="dimension|reference" />
+    
+    <!-- 星星菜单 -->
 
 	<declare-styleable name="ArcLayout">
         <attr name="fromDegrees"/>
@@ -16,9 +15,9 @@
         <attr name="childSize"/>
     </declare-styleable>
 	
-	<declare-styleable name="RayLayout">
+	<!-- <declare-styleable name="RayLayout">
 		<attr name="leftHolderWidth" format="dimension" />
-	</declare-styleable>
+	</declare-styleable> -->
 	
 	<declare-styleable name="CircularImageView">
         <attr name="border" format="boolean"></attr>

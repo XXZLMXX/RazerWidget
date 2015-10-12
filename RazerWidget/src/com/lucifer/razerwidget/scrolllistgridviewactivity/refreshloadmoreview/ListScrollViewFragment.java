@@ -3,6 +3,7 @@ package com.lucifer.razerwidget.scrolllistgridviewactivity.refreshloadmoreview;
 import java.util.ArrayList;
 import org.kymjs.kjframe.KJBitmap;
 import com.lucifer.razerlib.scrolllistgridview.pullscrolllistgrid.ListViewForScrollView;
+import com.lucifer.razerlib.scrolllistgridview.pullscrolllistgrid.ListViewForScrollView.OnPositionChangedListener;
 import com.lucifer.razerlib.scrolllistgridview.pullscrolllistgrid.PullToRefreshView;
 import com.lucifer.razerlib.scrolllistgridview.pullscrolllistgrid.PullToRefreshView.OnFooterRefreshListener;
 import com.lucifer.razerlib.scrolllistgridview.pullscrolllistgrid.PullToRefreshView.OnHeaderRefreshListener;
@@ -17,10 +18,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
+import android.widget.TextView;
 
 
 
-public class ListScrollViewFragment extends Fragment implements OnHeaderRefreshListener, OnFooterRefreshListener
+public class ListScrollViewFragment extends Fragment implements OnHeaderRefreshListener, OnFooterRefreshListener, OnPositionChangedListener
 {
 	View view;
 	PullToRefreshView pullrefreshview_scroll_listview;
@@ -49,7 +51,7 @@ public class ListScrollViewFragment extends Fragment implements OnHeaderRefreshL
 		
 		pullrefreshview_scroll_listview.setOnHeaderRefreshListener(this);
 		pullrefreshview_scroll_listview.setOnFooterRefreshListener(this);
-		
+
 		
 		datas = new ArrayList<DataBean>();
 		for(int i=0;i<20;i++)
@@ -61,7 +63,7 @@ public class ListScrollViewFragment extends Fragment implements OnHeaderRefreshL
 		}
 		adapter = new ScrollViewAdapter(getActivity(), datas);
 		lv_pullscrolllist.setAdapter(adapter);
-		
+		lv_pullscrolllist.setOnPositionChangedListener(this);
 		
 		return view;
 	}
@@ -102,6 +104,17 @@ public class ListScrollViewFragment extends Fragment implements OnHeaderRefreshL
 		}
 		adapter.notifyDataSetChanged();
 		pullrefreshview_scroll_listview.onFooterRefreshComplete();
+	}
+
+
+
+
+	@Override
+	public void onPositionChanged(ListViewForScrollView listView, int position,
+			View scrollBarPanel)
+	{
+		// TODO Auto-generated method stub
+		((TextView) scrollBarPanel).setText("Position " + position);
 	}
 	
 	

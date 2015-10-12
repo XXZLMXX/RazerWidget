@@ -13,17 +13,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        app:text="很简单的TextView"
+		app:textSize="30sp"
         android:background="#aa0000"
-        app:text="这是我的TextView"
-        app:textSize="30sp" />
+         />
 
     <com.lucifer.razerlib.test.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#aa0000"
-        app:text="很简单的TextView"
-        app:textSize="30sp" />
+         />
 
     <com.lucifer.razerlib.test.MyTextView
         android:layout_width="wrap_content"

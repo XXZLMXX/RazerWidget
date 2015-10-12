@@ -27,6 +27,8 @@ public class LayerView extends View
 
 	private int mViewWidth, mViewHeight;// �ؼ����
 
+	
+	
 	public LayerView(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
@@ -35,6 +37,8 @@ public class LayerView extends View
 		mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.a);
 	}
 
+	
+	
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh)
 	{
@@ -49,6 +53,8 @@ public class LayerView extends View
 				true);
 	}
 
+	
+	
 	@Override
 	protected void onDraw(Canvas canvas)
 	{
@@ -60,4 +66,6 @@ public class LayerView extends View
 		canvas.drawBitmap(mBitmap, 0, 0, null);
 		canvas.restore();
 	}
+	
+	
 }
