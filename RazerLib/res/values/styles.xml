@@ -148,4 +148,12 @@
     <item name="android:textStyle">bold</item>
   </style>
     
+  <!-- 各种年月日周时间的选择 -->
+    <style name="Scroller">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/slider_back</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+  
 </resources>

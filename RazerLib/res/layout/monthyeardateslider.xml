@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lucifer.razerlib.allpicker.SliderContainer
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dateSliderContainer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <com.lucifer.razerlib.allpicker.ScrollLayout
+        style="@style/Scroller"
+        app:labelerClass="com.lucifer.razerlib.allpicker.labeler.YearLabeler"
+        app:labelerFormat="%tY"
+        app:childWidth="150dp"
+        />
+    <com.lucifer.razerlib.allpicker.ScrollLayout
+        style="@style/Scroller"
+        app:labelerClass="com.lucifer.razerlib.allpicker.labeler.MonthLabeler"
+        app:labelerFormat="%tB"
+        app:childWidth="200dp"
+        />
+    <include layout="@layout/dialogbuttons"/>
+</com.lucifer.razerlib.allpicker.SliderContainer>

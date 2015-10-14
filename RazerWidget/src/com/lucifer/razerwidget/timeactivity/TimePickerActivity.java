@@ -8,8 +8,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.widget.Toast;
 
+import com.lucifer.razerlib.timepickerview.TimePickerView;
+import com.lucifer.razerlib.timepickerview.TimePickerView.onSelectListener;
 import com.lucifer.razerwidget.R;
-import com.lucifer.razerwidget.timeactivity.TimePickerView.onSelectListener;
 
 /**
  * 更多详解见博客http://blog.csdn.net/zhongkejingwang/article/details/38513301

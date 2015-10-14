@@ -64,6 +64,6 @@
     <string name="invalid_date">Date must be between %1$s and %2$s.</string>
     <string name="month_name_format">MMMM yyyy</string>
    
-   
+    <string name="dateSliderTitle">Selected date</string>
     
 </resources>

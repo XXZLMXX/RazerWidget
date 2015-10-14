@@ -8,7 +8,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.lucifer.razerwidget.R;
-import com.lucifer.razerwidget.timeactivity.allpicker.AllPickerActivity;
 
 public class TimeActivity extends Activity implements OnClickListener
 {

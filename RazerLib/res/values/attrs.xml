@@ -397,5 +397,12 @@
 		<attr name="leftHolderWidth" format="dimension" />
 	</declare-styleable>
     
+	<!-- 各种年月日周时间的选择 -->
+	<declare-styleable name="ScrollLayout">
+        <attr name="labelerClass" format="string"/>
+        <attr name="labelerFormat" format="string"/>
+        <attr name="childWidth" format="dimension"/>
+        <attr name="childHeight" format="dimension"/>
+    </declare-styleable>
 
 </resources>
