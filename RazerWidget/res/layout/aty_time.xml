@@ -3,6 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+
+    <Button
+        android:id="@+id/btn_timepicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="滚动分秒选择" />
+    <Button 
+        android:id="@+id/btn_countdowntimer"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="倒计时"/>
+    <Button 
+        android:id="@+id/btn_dateandtimepicker"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="各种年月日周时分秒的横向滚动选择"/>
 
 </LinearLayout>

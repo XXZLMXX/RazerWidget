@@ -175,6 +175,8 @@
     <dimen name="videodetails_textsize_time">13.0dip</dimen>
  	<dimen name="video_bottom_bar_height">40.0dip</dimen>
     
+ 	    <dimen name="dimen_margin_circle">4dp</dimen>
+    <dimen name="dimen_margin_circle.negative">-4dp</dimen>
     
     
 </resources>
